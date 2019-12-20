@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-10">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/lucene-8.3.0/core/lucene-core-8.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/lucene-8.3.0/queryparser/lucene-queryparser-8.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/lucene-8.3.0/analysis/common/lucene-analyzers-common-8.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/lucene-8.3.0/demo/lucene-demo-8.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-digester3-3.2-bin/commons-digester3-3.2/commons-digester3-3.2.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-digester3-3.2-bin/commons-digester3-3.2/commons-digester3-3.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-digester3-3.2-bin/commons-digester3-3.2/commons-digester3-3.2-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-digester3-3.2-bin/commons-digester3-3.2/commons-digester3-3.2-with-deps.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-text-1.8-bin/commons-text-1.8/commons-text-1.8.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-text-1.8-bin/commons-text-1.8/commons-text-1.8-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-text-1.8-bin/commons-text-1.8/commons-text-1.8-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-text-1.8-bin/commons-text-1.8/commons-text-1.8-tests.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-text-1.8-bin/commons-text-1.8/commons-text-1.8-test-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-lang3-3.9-bin/commons-lang3-3.9/commons-lang3-3.9.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-lang3-3.9-bin/commons-lang3-3.9/commons-lang3-3.9-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-lang3-3.9-bin/commons-lang3-3.9/commons-lang3-3.9-tests.jar"/>
+	<classpathentry kind="lib" path="D:/Sgmon/Documents/Erasmus_Doc/Corsi/InformationRetrieval/commons-lang3-3.9-bin/commons-lang3-3.9/commons-lang3-3.9-test-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
