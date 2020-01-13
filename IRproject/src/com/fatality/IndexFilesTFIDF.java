@@ -45,6 +45,8 @@ import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.search.similarities.ClassicSimilarity;
+
 
 /**
  * Index all text files under a directory.
@@ -103,6 +105,8 @@ public class IndexFilesTFIDF {
 			Directory dir = FSDirectory.open(Paths.get(indexPath));
 			Analyzer analyzer = new StandardAnalyzer();
 			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+			iwc.setSimilarity(new ClassicSimilarity());
+
 
 			if (create) {
 				// Create a new index in the directory, removing any
@@ -218,7 +222,7 @@ public class IndexFilesTFIDF {
 				n_doc = n_doc + 1; //Number of total document indexed
 
 //				Write to file
-				if (n_doc % 100 == 0) {
+				if (n_doc % 1 == 0) {
 
 					printer.println("<text>" + StringEscapeUtils.escapeXml11(question.title) + "</text>");
 					printer.println("<solution> " + file.toString().substring(file.toString().lastIndexOf("\\") + 1)

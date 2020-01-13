@@ -18,15 +18,16 @@ import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.similarities.ClassicSimilarity;
 import org.apache.lucene.store.FSDirectory;
 /**
  * 
  * @author Simone Montiand Gianluca Puleri
  *
  */
-public class SearchFiles {
+public class SearchFilesTFIDF {
 
-	private SearchFiles() {
+	private SearchFilesTFIDF() {
 	}
 
 	/** Simple command-line based search demo.
@@ -79,6 +80,7 @@ public class SearchFiles {
 
 		IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(index)));
 		IndexSearcher searcher = new IndexSearcher(reader);
+		searcher.setSimilarity(new ClassicSimilarity());
 		Analyzer analyzer = new StandardAnalyzer();
 
 //		Use the boosts to prefer some parts against others
