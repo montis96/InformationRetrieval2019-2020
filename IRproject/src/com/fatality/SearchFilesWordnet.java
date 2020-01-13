@@ -21,9 +21,9 @@ import org.apache.lucene.store.FSDirectory;
  * @author Simone Monti and Gianluca Puleri
  *
  */
-public class SearchFilesWordnet_2 {
+public class SearchFilesWordnet {
 
-	private SearchFilesWordnet_2() {
+	private SearchFilesWordnet() {
 	}
 
 	/**

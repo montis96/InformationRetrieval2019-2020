@@ -24,9 +24,9 @@ import org.apache.lucene.store.FSDirectory;
  * @author Simone Montiand Gianluca Puleri
  *
  */
-public class SearchFiles_2 {
+public class SearchFiles {
 
-	private SearchFiles_2() {
+	private SearchFiles() {
 	}
 
 	/** Simple command-line based search demo.
@@ -98,7 +98,7 @@ public class SearchFiles_2 {
 
 		QueryXML question = (QueryXML) digester
 				.parse("file:///D:\\Sgmon\\Documents\\Erasmus_Doc\\Corsi\\InformationRetrieval\\IRproject\\queries_test.xml");
-		PrintWriter printerResults = new PrintWriter("finalResultsBase.csv");
+		PrintWriter printerResults = new PrintWriter("finalResultsTFIDF.csv");
 		System.out.println(question.getQueries()[0]);
 
 
@@ -156,10 +156,11 @@ public class SearchFiles_2 {
 	public static void doPagingSearch(IndexSearcher searcher, Query query, String queryString, int hitsPerPage,
 			boolean raw, boolean interactive, String solution, PrintWriter printerResults) throws IOException {
 
-		PrintWriter printer = new PrintWriter("results\\Base\\" + queryString.replaceAll("[^a-zA-Z0-9]", "") + ".txt");
+		PrintWriter printer = new PrintWriter("results\\TFIDF\\" + queryString.replaceAll("[^a-zA-Z0-9]", "") + ".txt");
 		printer.println("Query: " + queryString);
-		// Collect enough docs to show 5 pages
-		TopDocs results = searcher.search(query, 5 * hitsPerPage);
+		System.out.println("Query: " + queryString);
+		// Collect enough docs to show 1 pages
+		TopDocs results = searcher.search(query, 1* hitsPerPage);
 		
 		ScoreDoc[] hits = results.scoreDocs;
 
@@ -180,6 +181,7 @@ public class SearchFiles_2 {
 		for (int i = start; i < end; i++) {
 			if (raw) { // output raw format
 				System.out.println("doc=" + hits[i].doc + " score=" + hits[i].score);
+				System.exit(1);
 				printer.println("doc=" + hits[i].doc + " score=" + hits[i].score);
 				continue;
 			}

@@ -24,9 +24,9 @@ import org.apache.lucene.util.BytesRef;
  * @author Simone Monti and Gianluca Puleri
  *
  */
-public class SearchFilesRocchio_3 {
+public class SearchFilesRocchio {
 
-	private SearchFilesRocchio_3() {
+	private SearchFilesRocchio() {
 	}
 
 	/**

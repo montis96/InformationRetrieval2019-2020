@@ -1,176 +1,290 @@
 <queries>
-<text>Name resolution in templates</text>
-<solution> Q1097479.xml </solution>
-<text>Django cache.set() causing duplicate key error</text>
-<solution> Q1189541.xml </solution>
-<text>How to get the font size from CMFCPropertyFontProperty</text>
-<solution> Q1286363.xml </solution>
-<text>Call a function lower in the script from a function higher in the script</text>
-<solution> Q1383485.xml </solution>
-<text>Django ORM - assigning a raw value to DecimalField</text>
-<solution> Q1473332.xml </solution>
-<text>String arguments in python multiprocessing</text>
-<solution> Q1559125.xml </solution>
-<text>How do I transfer a file using wininet that is readable by a php script?</text>
-<solution> Q164284.xml </solution>
-<text>IThumbnailProvider and IInitializeWithItem</text>
-<solution> Q1733272.xml </solution>
-<text>Never ending Win32 Message loop</text>
-<solution> Q1815136.xml </solution>
-<text>How to avoid multiple instances of a program?</text>
-<solution> Q1900979.xml </solution>
-<text>Linking Error When Implementing Templated Based Operator Assignment Function</text>
-<solution> Q1983639.xml </solution>
-<text>Using Boost with Team Foundation Server</text>
-<solution> Q2069097.xml </solution>
-<text>C# to C++ &apos;Gotchas&apos;</text>
-<solution> Q2147572.xml </solution>
-<text>What would I use Stackless Python for?</text>
-<solution> Q2220645.xml </solution>
-<text>C for loop implemented differently than other languages?</text>
-<solution> Q229671.xml </solution>
-<text>Simulation of molecular dynamics in Python</text>
-<solution> Q2368671.xml </solution>
-<text>passing self data into a recursive function</text>
-<solution> Q2443264.xml </solution>
-<text>Why does one loop take longer to detect a shared memory update than another loop?</text>
-<solution> Q2524403.xml </solution>
-<text>Designing a Tag table that tells how many times it&apos;s used</text>
-<solution> Q2597751.xml </solution>
-<text>inheritance from str or int</text>
-<solution> Q2673651.xml </solution>
-<text>Confusion on C++ Python extensions. Things like getting C++ values for python values</text>
-<solution> Q2747955.xml </solution>
-<text>How can I add dynamic field in the model in django?</text>
-<solution> Q2825435.xml </solution>
-<text>running a python script where dependencies are not avail: distributed computing</text>
-<solution> Q2900660.xml </solution>
-<text>Is Python&apos;s logging module thread safe?</text>
-<solution> Q2973900.xml </solution>
-<text>Pure virtual destructor in interface</text>
-<solution> Q3042249.xml </solution>
-<text>Getting tests to parallelize using nose in python</text>
-<solution> Q3111915.xml </solution>
-<text>C++ Exposed property for COM in idl is showing as lower case &quot;all of a sudden&quot;</text>
-<solution> Q3179676.xml </solution>
-<text>What is the syntax for an array type?</text>
-<solution> Q3251983.xml </solution>
-<text>Catching functors using SFINAE in structure partial specialisation</text>
-<solution> Q3324554.xml </solution>
-<text>Simultaneous eval and exec</text>
-<solution> Q3400738.xml </solution>
-<text>Python midi out to FruityLoops Studio</text>
-<solution> Q3478707.xml </solution>
-<text>How can i format a decimal to a fraction with limits to the denominator</text>
-<solution> Q3553877.xml </solution>
-<text>C++/STL Graphviz and Boost - Seg Fault Problem</text>
-<solution> Q3631694.xml </solution>
-<text>Linux Installing Library (ICU) Question</text>
-<solution> Q3702695.xml </solution>
-<text>Loop thru a directory and search in all pre-filtered XML files for a word</text>
-<solution> Q3779632.xml </solution>
-<text>My python code won&apos;t run outside of my IDE</text>
-<solution> Q3853136.xml </solution>
-<text>multithreaded logging for high performance application</text>
-<solution> Q3921944.xml </solution>
-<text>Defining constants in python class, is self really needed?</text>
-<solution> Q3995546.xml </solution>
-<text>What is the difference between the standard library and the standard template library?</text>
-<solution> Q4064010.xml </solution>
-<text>Is there 64-bit version pymongo?</text>
-<solution> Q4132500.xml </solution>
-<text>ifstream: check if opened successfully</text>
-<solution> Q4206816.xml </solution>
-<text>C++ Linker fails because I add a throw</text>
-<solution> Q4281659.xml </solution>
-<text>Best practices when building timezone enabled applications</text>
-<solution> Q4353925.xml </solution>
-<text>Measuring a DiV&apos;s width, or grabbing JS variables in Python.</text>
-<solution> Q4425885.xml </solution>
-<text>Calling Google&apos;s Custom Search API via Python</text>
-<solution> Q4504717.xml </solution>
-<text>Blank Page But No Error - Python Appengine</text>
-<solution> Q4578453.xml </solution>
-<text>c++ like languages</text>
-<solution> Q4656651.xml </solution>
-<text>Casting const void* to const int*</text>
-<solution> Q4730503.xml </solution>
-<text>Setting &quot;cc&quot; when sending e-mail from Django</text>
-<solution> Q4802376.xml </solution>
-<text>Download javascript loaded pages</text>
-<solution> Q4880622.xml </solution>
-<text>python function parameter screwing up</text>
-<solution> Q4953112.xml </solution>
-<text>Good xls exporter to generate excel sheets automatically with a few macros from any programming language?</text>
-<solution> Q5028536.xml </solution>
-<text>c++ reading formated tabulated data from file using BOOST / STL/ etc</text>
-<solution> Q5105217.xml </solution>
-<text>Python: How to add a prefix to tags in an xml.etree.ElementTree</text>
-<solution> Q5183343.xml </solution>
-<text>#define mockable virtual in C++</text>
-<solution> Q5258006.xml </solution>
-<text>Yapsy minimal example</text>
-<solution> Q5333128.xml </solution>
-<text>Cross-compiling boost for Windows on Linux</text>
-<solution> Q5411282.xml </solution>
-<text>Call a method of an object with arguments in Python</text>
-<solution> Q5488155.xml </solution>
-<text>Enable clang for project</text>
-<solution> Q5564872.xml </solution>
-<text>Sending progress value to progress bar in python</text>
-<solution> Q5642500.xml </solution>
-<text>&apos;return&apos; with not-None expression list returns &apos;None&apos;</text>
-<solution> Q5715251.xml </solution>
-<text>finding the IP address which is connect to InterNet IN a PC</text>
-<solution> Q5789778.xml </solution>
-<text>c++ Segmentation Fault for loop</text>
-<solution> Q5863966.xml </solution>
-<text>How to debug a DLL file in Delphi</text>
-<solution> Q594253.xml </solution>
-<text>Do many Python libraries have relatively low code quality?</text>
-<solution> Q602096.xml </solution>
-<text>Why is &apos;True == not False&apos; a syntax error in Python?</text>
-<solution> Q6100305.xml </solution>
-<text>PHP define() function</text>
-<solution> Q6180801.xml </solution>
-<text>Are elements searchable in a multimap? Is it needed?</text>
-<solution> Q6259079.xml </solution>
-<text>Printing to the console vs writing to a file (speed)</text>
-<solution> Q6338812.xml </solution>
-<text>Python (Portable 2.5) subprocess report problem &quot;WindowsError: [Error 3] The system cannot find the path specified&quot;</text>
-<solution> Q6415651.xml </solution>
-<text>How to add constant-spaced ticks on axes whose lenghts vary? [Python]</text>
-<solution> Q6494232.xml </solution>
-<text>multiprocessing import modules on mac</text>
-<solution> Q6573646.xml </solution>
-<text>How to get just the return value from a function in Python?</text>
-<solution> Q6652611.xml </solution>
-<text>Eclipse CDT Code Completion Issue</text>
-<solution> Q6728428.xml </solution>
-<text>python array error</text>
-<solution> Q6807300.xml </solution>
-<text>pygame for python on virtual (VMWare) Windows XP on Mac OS10.6.8</text>
-<solution> Q6885618.xml </solution>
-<text>int in c/c++ of various size</text>
-<solution> Q6965798.xml </solution>
-<text>C++ and Java GUI linkage through SWIG</text>
-<solution> Q7041662.xml </solution>
-<text>How to make thread safe Log class that supports `&lt;&lt;` operations?</text>
-<solution> Q7118034.xml </solution>
-<text>QL code in C++ program</text>
-<solution> Q7199137.xml </solution>
-<text>Counting columns of a space separated file</text>
-<solution> Q7283077.xml </solution>
-<text>Stop argparse from globbing filepath</text>
-<solution> Q7366791.xml </solution>
-<text>Django models - how to filter out duplicate values by PK after the fact?</text>
-<solution> Q744424.xml </solution>
-<text>How do I ensure data is written to disk before closing fstream?</text>
-<solution> Q7522479.xml </solution>
-<text>One executable that starts as a GUI application or console application based on command line in Visual Studio 2005</text>
-<solution> Q772089.xml </solution>
-<text>Why is it better to use &apos;!=&quot; than &apos;&lt;&apos; in a vector loop? (C++)</text>
-<solution> Q871666.xml </solution>
-<text>Access violation after catching dll exception</text>
-<solution> Q967982.xml </solution>
+<text>Why the below piece of code is not crashing , though i have deleted the object?</text>
+<solution> Q1006214.xml </solution>
+<text>Why does std::string.find(text,std::string:npos) not return npos?</text>
+<solution> Q1011790.xml </solution>
+<text>C++ CGI and MySQL problem (mysql++)</text>
+<solution> Q1017824.xml </solution>
+<text>Finding current executable&apos;s path without /proc/self/exe</text>
+<solution> Q1023306.xml </solution>
+<text>&quot;Python.exe&quot; crashes when PyQt&apos;s setPixmap() is called with a Pixmap</text>
+<solution> Q1029033.xml </solution>
+<text>Python: most idiomatic way to convert None to empty string?</text>
+<solution> Q1034573.xml </solution>
+<text>Unable to see Python&apos;s approximations in mathematical calculations</text>
+<solution> Q1041543.xml </solution>
+<text>Overriding &quot;+=&quot; in Python? (__iadd__() method)</text>
+<solution> Q1047021.xml </solution>
+<text>KeyboardProc returning TRUE causes performance drops</text>
+<solution> Q1052992.xml </solution>
+<text>Bad pipe filedescriptor when reading from stdin in python</text>
+<solution> Q1057638.xml </solution>
+<text>Python win32 com : how to handle &apos;out&apos; parameter?</text>
+<solution> Q1062129.xml </solution>
+<text>Is there a python module compatible with Google Apps Engine&apos;s new &quot;Tasks&quot;</text>
+<solution> Q1068690.xml </solution>
+<text>Using the AND and NOT Operator in Python</text>
+<solution> Q1075652.xml </solution>
+<text>How can I combine the factory pattern with code flexibility</text>
+<solution> Q1080871.xml </solution>
+<text>Choosing Java vs Python on Google App Engine</text>
+<solution> Q1085898.xml </solution>
+<text>Template class inside class template in c++</text>
+<solution> Q1090819.xml </solution>
+<text>How does visual studio know which cpp files to rebuild when an include file is changed?</text>
+<solution> Q1097062.xml </solution>
+<text>Redirecting C++ fstream</text>
+<solution> Q1104347.xml </solution>
+<text>python singleton into multiprocessing</text>
+<solution> Q1109870.xml </solution>
+<text>std::set with user defined type, how to ensure no duplicates</text>
+<solution> Q1114856.xml </solution>
+<text>Finding perfmon counter id via winreg</text>
+<solution> Q1119220.xml </solution>
+<text>What is the best practice in deploying application on Windows?</text>
+<solution> Q1124667.xml </solution>
+<text>Encryption with Python</text>
+<solution> Q1130687.xml </solution>
+<text>is it required to give path after installation MySQL db for Python 2.6</text>
+<solution> Q1136676.xml </solution>
+<text>How to modify the local namespace in python</text>
+<solution> Q1142068.xml </solution>
+<text>Possible to declare function of enumerated type?</text>
+<solution> Q1147995.xml </solution>
+<text>Any reason to overload global new and delete?</text>
+<solution> Q1152511.xml </solution>
+<text>Qt: Add UI Elements using Qt Script</text>
+<solution> Q1157357.xml </solution>
+<text>What is difference between RegAsm.exe and regsvr32? How to generate a tlb file using regsvr32?</text>
+<solution> Q1163503.xml </solution>
+<text>Using Eclipse C++ CDT in Linux</text>
+<solution> Q1169429.xml </solution>
+<text>How to do type conversion for the following Scenario?</text>
+<solution> Q1175976.xml </solution>
+<text>How to receive dynamic length data from a message queue?</text>
+<solution> Q1181816.xml </solution>
+<text>A quickest way to learn Boost for returning C++/.NET veteran</text>
+<solution> Q1186605.xml </solution>
+<text>Is it possible to install SSL on Google app engine for iPhone application?</text>
+<solution> Q1191936.xml </solution>
+<text>Who takes ownership of the IErrorInfo?</text>
+<solution> Q1198829.xml </solution>
+<text>Getting total/free RAM from within Python</text>
+<solution> Q1204378.xml </solution>
+<text>Relation between object file and shared object file</text>
+<solution> Q1210787.xml </solution>
+<text>Why C/C++ does not defined expression evaluation order?</text>
+<solution> Q1216747.xml </solution>
+<text>Find unique elements in tuples in a python list</text>
+<solution> Q1221775.xml </solution>
+<text>Changing one character in a string in Python</text>
+<solution> Q1228299.xml </solution>
+<text>Detect compiler with #ifdef</text>
+<solution> Q1233435.xml </solution>
+<text>Can all language constructs be first-class in languages with offside-rules?</text>
+<solution> Q1238975.xml </solution>
+<text>Disable console output from subprocess.Popen in Python</text>
+<solution> Q1244723.xml </solution>
+<text>sstream question with chars</text>
+<solution> Q1250762.xml </solution>
+<text>How can I provide access to this buffer with CSingleLock?</text>
+<solution> Q1255430.xml </solution>
+<text>C++ byte stream</text>
+<solution> Q1260104.xml </solution>
+<text>Get file info into variables?</text>
+<solution> Q1266278.xml </solution>
+<text>How to check the TEMPLATE_DEBUG flag in a django template?</text>
+<solution> Q1271631.xml </solution>
+<text>Updating profile with python-twitter</text>
+<solution> Q1278192.xml </solution>
+<text>URLconfs in Django</text>
+<solution> Q1283811.xml </solution>
+<text>Drawing braces with Pyx</text>
+<solution> Q1289681.xml </solution>
+<text>What is the correct way to instantiate an object with an allocator?</text>
+<solution> Q1294832.xml </solution>
+<text>mod_python problem?</text>
+<solution> Q1301000.xml </solution>
+<text>Debug DLL&apos;s under Windows with GDB</text>
+<solution> Q1305493.xml </solution>
+<text>Other mouse buttons and ActiveX</text>
+<solution> Q1310810.xml </solution>
+<text>Facing an issue with recv() and send() winsock api. Recv() hangs while receving the last packet</text>
+<solution> Q1316280.xml </solution>
+<text>Is switch from MFC to QT or WTL (or other GUI toolkit) recommended for Windows CE development?</text>
+<solution> Q1322243.xml </solution>
+<text>When a function has a specific-size array parameter, why is it replaced with a pointer?</text>
+<solution> Q1328223.xml </solution>
+<text>What Happens When Stack and Heap Collide</text>
+<solution> Q1334055.xml </solution>
+<text>Identify user and machine on the local network</text>
+<solution> Q1340485.xml </solution>
+<text>C++ game and decorator pattern</text>
+<solution> Q1346355.xml </solution>
+<text>What&apos;s the difference between C++0x concepts and The Boost Concept Check Library (BCCL)?</text>
+<solution> Q1352571.xml </solution>
+<text>Raising an exception on updating a &apos;constant&apos; attribute in python</text>
+<solution> Q1358711.xml </solution>
+<text>pthread thread state</text>
+<solution> Q1365711.xml </solution>
+<text>Extract min implemetation for heap in c++</text>
+<solution> Q1370349.xml </solution>
+<text>C++: Safe to use longjmp and setjmp?</text>
+<solution> Q1376085.xml </solution>
+<text>C# way to mimic Python Dictionary Syntax</text>
+<solution> Q1381359.xml </solution>
+<text>Handling big numbers in code</text>
+<solution> Q1386604.xml </solution>
+<text>Using inline assembly from c++</text>
+<solution> Q1391737.xml </solution>
+<text>How to draw text on the desktop in Windows?</text>
+<solution> Q1397389.xml </solution>
+<text>Python - IronPython dilemma</text>
+<solution> Q1403103.xml </solution>
+<text>Getting another program&apos;s output as input on the fly</text>
+<solution> Q1408678.xml </solution>
+<text>execl pipe without dup</text>
+<solution> Q1413256.xml </solution>
+<text>Python implementation question</text>
+<solution> Q1418255.xml </solution>
+<text>How do you set system time using C/C++?</text>
+<solution> Q1422433.xml </solution>
+<text>In Django, how to call a subprocess with a slow start-up time</text>
+<solution> Q1428900.xml </solution>
+<text>C Variable Scope Specific Question</text>
+<solution> Q1435766.xml </solution>
+<text>directory structures C++</text>
+<solution> Q1441510.xml </solution>
+<text>Why do I get different outputs when encrypting using DPAPI?</text>
+<solution> Q1447053.xml </solution>
+<text>Python&apos;s json module, converts int dictionary keys to strings</text>
+<solution> Q1450957.xml </solution>
+<text>Spinlocks, How Useful Are They?</text>
+<solution> Q1456225.xml </solution>
+<text>Command line options with optional arguments in Python</text>
+<solution> Q1461942.xml </solution>
+<text>QDockWidget - remove handle</text>
+<solution> Q1467452.xml </solution>
+<text>How can I link against libpython.a such that the runtime linker can find all the symbols in libpython.a?</text>
+<solution> Q1472828.xml </solution>
+<text>Porting 32 bit C++ code to 64 bit - is it worth it? Why?</text>
+<solution> Q1479953.xml </solution>
+<text>django model Form. Include fields from related models</text>
+<solution> Q1483647.xml </solution>
+<text>play video clip in windows c++ app</text>
+<solution> Q1488234.xml </solution>
+<text>Is it bad that C++0x&apos;s lambda expressions don&apos;t have a named type?</text>
+<solution> Q1494109.xml </solution>
+<text>Renaming first and second of a map iterator</text>
+<solution> Q1500064.xml </solution>
+<text>call back member function in c++</text>
+<solution> Q1506313.xml </solution>
+<text>Python: how to write a data struct to a file as text (not pickled)</text>
+<solution> Q1512401.xml </solution>
+<text>What does vectorization mean?</text>
+<solution> Q1516622.xml </solution>
+<text>Access Violation Reading Location on std::set::erase</text>
+<solution> Q1520772.xml </solution>
+<text>Mpeg 7 Descriptors in C++</text>
+<solution> Q1525284.xml </solution>
+<text>Monitor the data in a table</text>
+<solution> Q1530019.xml </solution>
+<text>C++ Read File Into hash_map</text>
+<solution> Q1535249.xml </solution>
+<text>Is it possible for slicing to occur with Smart Pointers?</text>
+<solution> Q1541031.xml </solution>
+<text>XML POST REST Request using Python</text>
+<solution> Q1546041.xml </solution>
+<text>changing part of a file in C++</text>
+<solution> Q1550070.xml </solution>
+<text>C++ const keyword - use liberally?</text>
+<solution> Q1554750.xml </solution>
+<text>To Disable the multimedia contents in IE</text>
+<solution> Q1560351.xml </solution>
+<text>Strange numpy.float96 behaviour</text>
+<solution> Q1565731.xml </solution>
+<text>Vim, Python and curses</text>
+<solution> Q1571032.xml </solution>
+<text>Does code in header file increases binary size?</text>
+<solution> Q1576317.xml </solution>
+<text>Are these placement new macros correct?</text>
+<solution> Q1580960.xml </solution>
+<text>In what order do C++ objects passed as arguments to constructors of other objects go out of scope?</text>
+<solution> Q1584835.xml </solution>
+<text>Initializer list *argument* evaluation order</text>
+<solution> Q1589950.xml </solution>
+<text>How should I optimize this filesystem I/O bound program?</text>
+<solution> Q1594604.xml </solution>
+<text>Black border around characters when draw Image to a transparent Bitmap</text>
+<solution> Q1599662.xml </solution>
+<text>Python - Using the Multiply Operator to Create Copies of Objects in Lists</text>
+<solution> Q1605024.xml </solution>
+<text>When or where was the term &quot;Most vexing parse&quot; coined?</text>
+<solution> Q1610551.xml </solution>
+<text>How to use C++ classes with ctypes?</text>
+<solution> Q1615813.xml </solution>
+<text>What is causing this Python exception?</text>
+<solution> Q1619908.xml </solution>
+<text>Django model fields validation</text>
+<solution> Q1624782.xml </solution>
+<text>Are there good examples of good C++ I/O usage</text>
+<solution> Q1630464.xml </solution>
+<text>error when I call strcmp Invalid conversion from &apos;int&apos; to &apos;const char*&apos;</text>
+<solution> Q1635130.xml </solution>
+<text>Multiple CouchDB Document fetch with couchdb-python</text>
+<solution> Q1640054.xml </solution>
+<text>Is there any way to use a strftime-like function for dates before 1900 in Python?</text>
+<solution> Q1643967.xml </solution>
+<text>How do I ensure buffer memory is aligned?</text>
+<solution> Q1649398.xml </solution>
+<text>Python Scoping/Static Misunderstanding</text>
+<solution> Q1654967.xml </solution>
+<text>Stream and c++ - parsing file</text>
+<solution> Q1660281.xml </solution>
+<text>Automatic string length in recarray</text>
+<solution> Q1664917.xml </solution>
+<text>Confusing Valgrind output: indirectly lost blocks but no errors?</text>
+<solution> Q1671469.xml </solution>
+<text>How does a classmethod object work?</text>
+<solution> Q1677468.xml </solution>
+<text>What does the ** maths operator do in Python?</text>
+<solution> Q1683008.xml </solution>
+<text>How can I tell if a given method is a classmethod or instancemethod in Python?</text>
+<solution> Q1687531.xml </solution>
+<text>Tool for program statistics</text>
+<solution> Q1693345.xml </solution>
+<text>Scipy loadmat only load integers?</text>
+<solution> Q1698223.xml </solution>
+<text>Can I use Django 1.1 with django-search-lucene for full-text searching, and if so, what resources/links/docs can I reference to get it up and running?</text>
+<solution> Q1704278.xml </solution>
+<text>Combine multiple videos into one</text>
+<solution> Q1709574.xml </solution>
+<text>Can&apos;t use a data obj with timeit.Time module in python</text>
+<solution> Q1714352.xml </solution>
+<text>Euler #26, how to convert rational number to string with better precision?</text>
+<solution> Q1719776.xml </solution>
+<text>Templates, nested classes, and &quot;expected constructor, destructor, or conversion before &apos;&amp;&apos; token&quot;</text>
+<solution> Q1725147.xml </solution>
+<text>C# for UI, c++ for library</text>
+<solution> Q1730966.xml </solution>
+<text>Help with Python UnboundLocalError: local variable referenced before assignment</text>
+<solution> Q1735263.xml </solution>
+<text>What is a good option for a Non-Blocking &quot;Database&quot; (Using a TCP Socket Server)</text>
+<solution> Q1739100.xml </solution>
+<text>Making a program timer-based rather than frame-rate dependent?</text>
+<solution> Q1743966.xml </solution>
+<text>Unable to unpickle a file on Mac that was pickled on Windows</text>
+<solution> Q1748958.xml </solution>
+<text>appcfg.py upload_data is failing with expected &lt;directory&gt; even though I&apos;ve got it</text>
+<solution> Q1753867.xml </solution>
+<text>console app c++</text>
+<solution> Q1760479.xml </solution>
+<text>Instead of NULL, should I write `0x0` or `0`?</text>
+<solution> Q1765171.xml </solution>
+<text>boost to_upper function of string_algo doesn&apos;t take into account the locale</text>
+<solution> Q1770763.xml </solution>
+<text>python reload function and syntactically incorrect module</text>
+<solution> Q1776153.xml </solution>
+<text>MSVC Unicode not displaying English</text>
+<solution> Q1779891.xml </solution>
 </queries>

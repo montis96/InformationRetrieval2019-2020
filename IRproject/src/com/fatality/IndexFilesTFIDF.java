@@ -55,13 +55,13 @@ import org.apache.lucene.store.FSDirectory;
  * @author Simone Monti and Gianluca Puleri
  *
  */
-public class IndexFiles_2 {
+public class IndexFilesTFIDF {
 
 	private static int n_doc = 0;
 
 	public static IndexWriter writer;
 
-	private IndexFiles_2() {
+	private IndexFilesTFIDF() {
 	}
 
 	/** Index all text files under a directory. */
@@ -106,7 +106,7 @@ public class IndexFiles_2 {
 
 			if (create) {
 				// Create a new index in the directory, removing any
-				// previously indexed documents:
+				// previously indexed documents:	
 				iwc.setOpenMode(OpenMode.CREATE);
 			} else {
 				// Add new documents to an existing index:
@@ -218,7 +218,7 @@ public class IndexFiles_2 {
 				n_doc = n_doc + 1; //Number of total document indexed
 
 //				Write to file
-				if (n_doc % 1800 == 0) {
+				if (n_doc % 100 == 0) {
 
 					printer.println("<text>" + StringEscapeUtils.escapeXml11(question.title) + "</text>");
 					printer.println("<solution> " + file.toString().substring(file.toString().lastIndexOf("\\") + 1)
