@@ -69,7 +69,7 @@ public class IndexTitles {
 		String usage = "java org.apache.lucene.demo.IndexFiles" + " [-index INDEX_PATH] [-docs DOCS_PATH] [-update]\n\n"
 				+ "This indexes the documents in DOCS_PATH, creating a Lucene index"
 				+ "in INDEX_PATH that can be searched with SearchFiles";
-		String indexPath = "index";
+		String indexPath = "indexTitles";
 		String docsPath = null;
 		boolean create = true;
 		for (int i = 0; i < args.length; i++) {
@@ -122,7 +122,7 @@ public class IndexTitles {
 
 			writer = new IndexWriter(dir, iwc);
 
-			PrintWriter printer = new PrintWriter("queries_test.xml");
+			PrintWriter printer = new PrintWriter("queries_test_titles.xml");
 
 			printer.println("<queries>");
 
@@ -210,7 +210,7 @@ public class IndexTitles {
 			digester.addObjectCreate("root/", Question.class);
 			digester.addCallMethod("root/question/Title", "setTitle", 0);
 //			digester.addCallMethod("root/question/Body", "setBody_question", 0);
-//			digester.addCallMethod("root/question/Tags", "setTags", 0);
+			digester.addCallMethod("root/question/Tags", "setTags", 0);
 //			digester.addCallMethod("root/replies/answer/Body", "addAnswers", 0);
 
 			try {
@@ -220,7 +220,8 @@ public class IndexTitles {
 //				Write to file
 				if (n_doc % 1800 == 0) {
 
-					printer.println("<text>" + StringEscapeUtils.escapeXml11(question.title) + "</text>");
+					printer.println("<text>" + StringEscapeUtils.escapeXml11(question.title) + "</text>" );
+					printer.println( "<tags>" + StringEscapeUtils.escapeXml11(question.tags) + "</tags>" );
 					printer.println("<solution> " + file.toString().substring(file.toString().lastIndexOf("\\") + 1)
 							+ " </solution>");
 				}
@@ -236,13 +237,13 @@ public class IndexTitles {
 
 				Field title = new Field("title_question", question.getTitle(), type);
 //				Field body_question = new Field("body_question", question.getBody_question(), type);
-//				Field tags = new Field("tags", question.getTags(), type);
+				Field tags = new Field("tags", question.getTags(), type);
 //				Field answers = new Field("answers", question.getAnswers(), type);
 
 				
 				doc.add(title);
 //				doc.add(body_question);
-//				doc.add(tags);
+				doc.add(tags);
 //				doc.add(answers);
 
 			} catch (Exception e) {

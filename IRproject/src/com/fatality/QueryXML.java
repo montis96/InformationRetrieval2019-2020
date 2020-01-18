@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class QueryXML {
 	public List<String> queries = new ArrayList<String>();
+	public List<String> tags = new ArrayList<String>();
 	public List<String> solutions = new ArrayList<String>();
 	
 	/**
@@ -24,6 +25,20 @@ public class QueryXML {
 	 */
 	public void addQueries(String title) {
 		this.queries.add(title);
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public String[] getTags() {
+		return this.tags.toArray(new String[0]);
+	}
+	/**
+	 * 
+	 * @param tag
+	 */
+	public void addTags(String tag) {
+		this.tags.add(tag);
 	}
 	/**
 	 * 

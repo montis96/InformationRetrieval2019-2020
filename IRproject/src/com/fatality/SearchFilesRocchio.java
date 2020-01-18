@@ -15,6 +15,7 @@ import org.apache.lucene.index.*;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.*;
+import org.apache.lucene.search.similarities.ClassicSimilarity;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.BytesRef;
 
@@ -42,7 +43,7 @@ public class SearchFilesRocchio {
 			System.exit(0);
 		}
 
-		String index = "index";
+		String index = "indexTFIDF";
 		List<String> fields = new ArrayList<String>();
 //		fields.add("title_question");
 		fields.add("body_question");
@@ -80,6 +81,7 @@ public class SearchFilesRocchio {
 
 		IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(index)));
 		IndexSearcher searcher = new IndexSearcher(reader);
+		searcher.setSimilarity(new ClassicSimilarity());
 		Analyzer analyzer = new StandardAnalyzer();
 
 //		Use the boosts to prefer some parts against others
@@ -96,8 +98,7 @@ public class SearchFilesRocchio {
 		digester.addObjectCreate("queries/", QueryXML.class);
 		digester.addCallMethod("queries/text", "addQueries", 0);
 		digester.addCallMethod("queries/solution", "addSolutions", 0);
-		QueryXML question = (QueryXML) digester.parse(
-				"file:///D:\\Sgmon\\Documents\\Erasmus_Doc\\Corsi\\InformationRetrieval\\IRproject\\queries_test.xml");
+		QueryXML question = (QueryXML) digester.parse("file:///D:\\Sgmon\\Git\\InformationRetrieval2019-2020\\IRproject\\queries_test_BM25.xml");
 
 		PrintWriter printerResults = new PrintWriter("finalResultsRocchio.csv");
 
@@ -160,14 +161,10 @@ public class SearchFilesRocchio {
 			String originalQueryText, int hitsPerPage, boolean raw, boolean interactive,
 			boolean newTermQuery /* False first time */, String[] finalFields, String solution,
 			PrintWriter printerResults) throws IOException, ParseException {
-
 		double beta = 0.75;
 		double y = 0.25;
-		int kRelevant = 5;
+		int kRelevant = 7;
 		int kNotRelevant = 0;
-
-		PrintWriter printer = new PrintWriter(
-				"results\\Rocchio\\" + originalQueryText.replaceAll("[^a-zA-Z0-9]", "_") + ".txt");
 
 		if (!newTermQuery) {
 			String[] queryTerms = originalQueryText.split(" ");
@@ -297,7 +294,7 @@ public class SearchFilesRocchio {
 				}
 			}
 
-			int kExpansionTerms = 5;
+			int kExpansionTerms = 10;
 
 			List<String> newQuery = new ArrayList<>();
 			int j = 0;
@@ -314,8 +311,6 @@ public class SearchFilesRocchio {
 			}
 
 			String joined = String.join(" ", newQuery);
-			printer.println("Query: " + originalQueryText);
-			printer.println("New query: " + joined);
 			System.out.println("New query: " + joined);
 
 			Analyzer analyzer = new StandardAnalyzer();
@@ -328,8 +323,7 @@ public class SearchFilesRocchio {
 			ScoreDoc[] hits = results.scoreDocs;
 			int numTotalHits = Math.toIntExact(results.totalHits.value);
 			System.out.println(numTotalHits + " total matching documents");
-			printer.println(numTotalHits + " total matching documents");
-
+			PrintWriter printer = new PrintWriter("results\\Rocchio\\" + originalQueryText.replaceAll("[^a-zA-Z0-9]", "") + ".csv");
 			int start = 0;
 			int end = Math.min(numTotalHits, hitsPerPage);
 
@@ -343,15 +337,14 @@ public class SearchFilesRocchio {
 			for (int i = start; i < end; i++) {
 				if (raw) { // output raw format
 					System.out.println("doc=" + hits[i].doc + " score=" + hits[i].score);
-					printer.println("doc=" + hits[i].doc + " score=" + hits[i].score);
 					continue;
 				}
-
+			
 				Document doc = searcher.doc(hits[i].doc);
 				String path = doc.get("path");
 				if (path != null) {
 					System.out.println((i + 1) + ". " + path);
-					printer.println((i + 1) + ". " + path);
+					printer.print(path + ",");
 					String title = doc.get("title");
 					if (title != null) {
 						System.out.println("   Title: " + doc.get("title"));

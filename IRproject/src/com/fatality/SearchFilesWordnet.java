@@ -37,7 +37,7 @@ public class SearchFilesWordnet {
 			System.out.println(usage);
 			System.exit(0);
 		}
-		String index = "index";
+		String index = "indexBM25";
 		List<String> fields = new ArrayList<String>();
 //		fields.add("title_question");
 		fields.add("body_question");
@@ -93,7 +93,7 @@ public class SearchFilesWordnet {
 		digester.addCallMethod("queries/text", "addQueries", 0);
 		digester.addCallMethod("queries/solution", "addSolutions", 0);
 		QueryXML question = (QueryXML) digester
-				.parse("file:///D:\\Sgmon\\Documents\\Erasmus_Doc\\Corsi\\InformationRetrieval\\IRproject\\queries_test.xml");
+				.parse("file:///D:\\Sgmon\\Git\\InformationRetrieval2019-2020\\IRproject\\queries_test_BM25.xml");
 		PrintWriter printerResults = new PrintWriter("finalResultsSyn.csv");
 
 		for (int n = 0; n < question.getQueries().length; n++) {
@@ -149,21 +149,16 @@ public class SearchFilesWordnet {
 			boolean raw, boolean interactive, String solution, PrintWriter printerResults) throws IOException {
 
 //		Write on files the results	
-		PrintWriter printer = new PrintWriter("results\\Syn\\" + queryString.replaceAll("[^a-zA-Z0-9]", "") + ".txt");
-		printer.println("Query: " + queryString);
+		PrintWriter printer = new PrintWriter("results\\Wordnet\\" + queryString.replaceAll("[^a-zA-Z0-9]", "") + ".csv");
 		System.out.println("Synonim");
-		printer.println("Synonim");
 		System.out.println(query.toString());
-		printer.println(query.toString());
 		System.out.println("Results");
-		printer.println("Results");
 
 		TopDocs results = searcher.search(query, 5 * hitsPerPage);
 		ScoreDoc[] hits = results.scoreDocs;
 
 		int numTotalHits = Math.toIntExact(results.totalHits.value);
 		System.out.println(numTotalHits + " total matching documents");
-		printer.println(numTotalHits + " total matching documents");
 
 		int start = 0;
 		int end = Math.min(numTotalHits, hitsPerPage);
@@ -178,7 +173,6 @@ public class SearchFilesWordnet {
 		for (int i = start; i < end; i++) {
 			if (raw) { // output raw format
 				System.out.println("doc=" + hits[i].doc + " score=" + hits[i].score);
-				printer.println("doc=" + hits[i].doc + " score=" + hits[i].score);
 				continue;
 			}
 
@@ -186,7 +180,7 @@ public class SearchFilesWordnet {
 			String path = doc.get("path");
 			if (path != null) {
 				System.out.println((i + 1) + ". " + path);
-				printer.println((i + 1) + ". " + path);
+				printer.print(path + ",");
 				String title = doc.get("title");
 				if (title != null) {
 					System.out.println("   Title: " + doc.get("title"));

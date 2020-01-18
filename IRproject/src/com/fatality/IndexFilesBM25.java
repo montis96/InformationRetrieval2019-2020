@@ -69,7 +69,7 @@ public class IndexFilesBM25 {
 		String usage = "java org.apache.lucene.demo.IndexFiles" + " [-index INDEX_PATH] [-docs DOCS_PATH] [-update]\n\n"
 				+ "This indexes the documents in DOCS_PATH, creating a Lucene index"
 				+ "in INDEX_PATH that can be searched with SearchFiles";
-		String indexPath = "index";
+		String indexPath = "indexBM25";
 		String docsPath = null;
 		boolean create = true;
 		for (int i = 0; i < args.length; i++) {
@@ -103,7 +103,7 @@ public class IndexFilesBM25 {
 			Directory dir = FSDirectory.open(Paths.get(indexPath));
 			Analyzer analyzer = new StandardAnalyzer();
 			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
-
+			
 			if (create) {
 				// Create a new index in the directory, removing any
 				// previously indexed documents:
@@ -122,7 +122,7 @@ public class IndexFilesBM25 {
 
 			writer = new IndexWriter(dir, iwc);
 
-			PrintWriter printer = new PrintWriter("queries_test.xml");
+			PrintWriter printer = new PrintWriter("queries_test_BM25.xml");
 
 			printer.println("<queries>");
 
@@ -172,7 +172,7 @@ public class IndexFilesBM25 {
 				@Override
 				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
 					try {
-						indexDoc(writer, file, attrs.lastModifiedTime().toMillis(), printer);
+						indexDoc(writer, file, attrs.lastModifiedTime().toMillis(),  printer);
 					} catch (IOException ignore) {
 						// don't index files that can't be read.
 					}
@@ -218,7 +218,7 @@ public class IndexFilesBM25 {
 				n_doc = n_doc + 1; //Number of total document indexed
 
 //				Write to file
-				if (n_doc % 100 == 0) {
+				if (n_doc % 1800 == 0) {
 
 					printer.println("<text>" + StringEscapeUtils.escapeXml11(question.title) + "</text>");
 					printer.println("<solution> " + file.toString().substring(file.toString().lastIndexOf("\\") + 1)

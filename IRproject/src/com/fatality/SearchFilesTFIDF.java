@@ -42,7 +42,7 @@ public class SearchFilesTFIDF {
 			System.exit(0);
 		}
 
-		String index = "index";
+		String index = "indexTFIDF";
 		List<String> fields = new ArrayList<String>();
 //		fields.add("title_question");
 		fields.add("body_question");
@@ -99,7 +99,8 @@ public class SearchFilesTFIDF {
 		digester.addCallMethod("queries/solution", "addSolutions", 0);
 
 		QueryXML question = (QueryXML) digester
-				.parse("file:///D:\\Sgmon\\Documents\\Erasmus_Doc\\Corsi\\InformationRetrieval\\IRproject\\queries_test.xml");
+				.parse("file:///D:\\\\Sgmon\\\\Git\\\\InformationRetrieval2019-2020\\\\IRproject\\\\queries_test_TFIDF.xml");
+		
 		PrintWriter printerResults = new PrintWriter("finalResultsTFIDF.csv");
 		System.out.println(question.getQueries()[0]);
 
@@ -158,8 +159,7 @@ public class SearchFilesTFIDF {
 	public static void doPagingSearch(IndexSearcher searcher, Query query, String queryString, int hitsPerPage,
 			boolean raw, boolean interactive, String solution, PrintWriter printerResults) throws IOException {
 
-		PrintWriter printer = new PrintWriter("results\\TFIDF\\" + queryString.replaceAll("[^a-zA-Z0-9]", "") + ".txt");
-		printer.println("Query: " + queryString);
+		PrintWriter printer = new PrintWriter("results\\TFIDF\\" + queryString.replaceAll("[^a-zA-Z0-9]", "") + ".csv");
 		System.out.println("Query: " + queryString);
 		// Collect enough docs to show 1 pages
 		TopDocs results = searcher.search(query, 1* hitsPerPage);
@@ -168,7 +168,6 @@ public class SearchFilesTFIDF {
 
 		int numTotalHits = Math.toIntExact(results.totalHits.value);
 		System.out.println(numTotalHits + " total matching documents");
-		printer.println(numTotalHits + " total matching documents");
 
 		int start = 0;
 		int end = Math.min(numTotalHits, hitsPerPage);
@@ -183,7 +182,6 @@ public class SearchFilesTFIDF {
 		for (int i = start; i < end; i++) {
 			if (raw) { // output raw format
 				System.out.println("doc=" + hits[i].doc + " score=" + hits[i].score);
-				System.exit(1);
 				printer.println("doc=" + hits[i].doc + " score=" + hits[i].score);
 				continue;
 			}
@@ -192,7 +190,7 @@ public class SearchFilesTFIDF {
 			String path = doc.get("path");
 			if (path != null) {
 				System.out.println((i + 1) + ". " + path);
-				printer.println((i + 1) + ". " + path);
+				printer.print(path + ",");
 				String title = doc.get("title");
 				if (title != null) {
 					System.out.println("   Title: " + doc.get("title"));

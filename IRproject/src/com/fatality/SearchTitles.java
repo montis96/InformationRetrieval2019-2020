@@ -14,6 +14,7 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
+//import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
@@ -25,9 +26,9 @@ import org.apache.lucene.store.FSDirectory;
  * @author Simone Montiand Gianluca Puleri
  *
  */
-public class SearchFilesBM25 {
+public class SearchTitles {
 
-	private SearchFilesBM25() {
+	private SearchTitles() {
 	}
 
 	/** Simple command-line based search demo.
@@ -42,12 +43,12 @@ public class SearchFilesBM25 {
 			System.exit(0);
 		}
 
-		String index = "indexBM25";
+		String index = "indexTitles";
 		List<String> fields = new ArrayList<String>();
-//		fields.add("title_question");
-		fields.add("body_question");
+		fields.add("title_question");
+//		fields.add("body_question");
 		fields.add("tags");
-		fields.add("answers");
+//		fields.add("answers");
 		int repeat = 0;
 		boolean raw = false;
 		int hitsPerPage = 10;
@@ -82,40 +83,36 @@ public class SearchFilesBM25 {
 		IndexSearcher searcher = new IndexSearcher(reader);
 		Analyzer analyzer = new StandardAnalyzer();
 
-//		Use the boosts to prefer some parts against others
-//		HashMap<String,Float> boosts = new HashMap<String,Float>();
-//		boosts.put("title", 2.0f);
-//		boosts.put("body_question", 1.5f);
-//		boosts.put("tags", 1.0f);
-//		boosts.put("answers", 1.0f);
-		MultiFieldQueryParser queryParser = new MultiFieldQueryParser(finalFields, analyzer/* , boosts */);
-
 //		Digester to read XML of queries 
 		Digester digester = new Digester();
 		digester.setValidating(false);
 		digester.addObjectCreate("queries/", QueryXML.class);
 		digester.addCallMethod("queries/text", "addQueries", 0);
+		digester.addCallMethod("queries/tags", "addTags", 0);
 		digester.addCallMethod("queries/solution", "addSolutions", 0);
 
 		QueryXML question = (QueryXML) digester
-				.parse("file:///D:\\Sgmon\\Git\\InformationRetrieval2019-2020\\IRproject\\queries_test_BM25.xml");
-		PrintWriter printerResults = new PrintWriter("finalResultsBM25.csv");
+				.parse("file:///D:\\Sgmon\\Git\\InformationRetrieval2019-2020\\IRproject\\queries_test_titles.xml");
+		PrintWriter printerResults = new PrintWriter("finalResultsTitle.csv");
 		System.out.println(question.getQueries()[0]);
 
 
 		for (int n = 0; n < question.getQueries().length; n++) {
-			String line = question.getQueries()[n];
-			if (line == null || line.length() == -1) {
-				break;
-			}
+			String[] line = {question.getQueries()[n], question.getTags()[n]};
+//			if (line == null) {
+//				break;
+//			}
 
-			line = line.trim();
+			line[0] = line[0].trim();
+			line[1] = line[1].trim();
+			line[0] =MultiFieldQueryParser.escape(line[0]);
+			line[1] =MultiFieldQueryParser.escape(line[1]);
 			
-			if (line == null || line.length() == 0) {
-				break;
-			}
+//			if (line == null) {
+//				break;
+//			}
 
-			Query query = queryParser.parse(MultiFieldQueryParser.escape(line));
+			Query query = MultiFieldQueryParser.parse(line, finalFields, analyzer);
 
 			System.out.println("Searching for: " + query.toString());
 
@@ -128,7 +125,7 @@ public class SearchFilesBM25 {
 				System.out.println("Time: " + (end.getTime() - start.getTime()) + "ms");
 			}
 
-			doPagingSearch(searcher, query, line, hitsPerPage, raw, line == null, question.getSolutions()[n],
+			doPagingSearch(searcher, query, line[0].toString(), hitsPerPage, raw, line == null, question.getSolutions()[n],
 					printerResults);
 		}
 		printerResults.close();
@@ -157,7 +154,7 @@ public class SearchFilesBM25 {
 	public static void doPagingSearch(IndexSearcher searcher, Query query, String queryString, int hitsPerPage,
 			boolean raw, boolean interactive, String solution, PrintWriter printerResults) throws IOException {
 
-		PrintWriter printer = new PrintWriter("results\\BM25\\" + queryString.replaceAll("[^a-zA-Z0-9]", "") + ".csv");
+		PrintWriter printer = new PrintWriter("results\\Titles\\" + queryString.replaceAll("[^a-zA-Z0-9]", "") + ".csv");
 		System.out.println("Query: " + queryString);
 		// Collect enough docs to show 1 pages
 		TopDocs results = searcher.search(query, 1* hitsPerPage);
@@ -180,14 +177,16 @@ public class SearchFilesBM25 {
 		for (int i = start; i < end; i++) {
 			if (raw) { // output raw format
 				System.out.println("doc=" + hits[i].doc + " score=" + hits[i].score);
-				continue;
+				printer.println("doc=" + hits[i].doc + " score=" + hits[i].score);
+//				continue;
 			}
 
 			Document doc = searcher.doc(hits[i].doc);
 			String path = doc.get("path");
 			if (path != null) {
-				System.out.println((i + 1) + "," + path);
-				printer.print(path + ",");
+				System.out.println((i + 1) + ", " + path + ", score=" + hits[i].score);
+				if( hits[i].score > hits[0].score / 2.4)
+					printer.print(path + ",");
 				String title = doc.get("title");
 				if (title != null) {
 					System.out.println("   Title: " + doc.get("title"));

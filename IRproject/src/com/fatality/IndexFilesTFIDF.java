@@ -71,7 +71,7 @@ public class IndexFilesTFIDF {
 		String usage = "java org.apache.lucene.demo.IndexFiles" + " [-index INDEX_PATH] [-docs DOCS_PATH] [-update]\n\n"
 				+ "This indexes the documents in DOCS_PATH, creating a Lucene index"
 				+ "in INDEX_PATH that can be searched with SearchFiles";
-		String indexPath = "index";
+		String indexPath = "indexTFIDF";
 		String docsPath = null;
 		boolean create = true;
 		for (int i = 0; i < args.length; i++) {
@@ -126,7 +126,7 @@ public class IndexFilesTFIDF {
 
 			writer = new IndexWriter(dir, iwc);
 
-			PrintWriter printer = new PrintWriter("queries_test.xml");
+			PrintWriter printer = new PrintWriter("queries_test_TFIDF.xml");
 
 			printer.println("<queries>");
 
@@ -222,7 +222,7 @@ public class IndexFilesTFIDF {
 				n_doc = n_doc + 1; //Number of total document indexed
 
 //				Write to file
-				if (n_doc % 1 == 0) {
+				if (n_doc % 1800 == 0) {
 
 					printer.println("<text>" + StringEscapeUtils.escapeXml11(question.title) + "</text>");
 					printer.println("<solution> " + file.toString().substring(file.toString().lastIndexOf("\\") + 1)
