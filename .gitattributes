@@ -2,3 +2,4 @@
 *.py linguist-detectable=true
 *.java linguist-detectable=true
 IRproject/index/* linguist-detectable=false
+IRproject/index/* linguist-language=Java
