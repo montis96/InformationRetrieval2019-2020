@@ -1,0 +1,3 @@
+*.raku linguist-detectable=false
+*.py linguist-detectable=true
+*.java linguist-detectable=true
